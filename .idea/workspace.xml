@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5dbec4fe-c989-45a1-8ae8-5cb021896c0e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../spSQLNodeAPI/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../spSQLNodeAPI/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../spSQLNodeAPI/Dockerfile" afterPath="$PROJECT_DIR$/../spSQLNodeAPI/Dockerfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../spSQLNodeAPI/docker-compose.yml" afterPath="$PROJECT_DIR$/../spSQLNodeAPI/docker-compose.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../spSQLNodeAPI/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../spSQLNodeAPI/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="17" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,9 +83,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/../spSQLNodeAPI/docker-compose.yml" />
         <option value="$PROJECT_DIR$/../spSQLNodeAPI/app.js" />
         <option value="$PROJECT_DIR$/../spSQLNodeAPI/Dockerfile" />
+        <option value="$PROJECT_DIR$/../spSQLNodeAPI/docker-compose.yml" />
       </list>
     </option>
   </component>
@@ -191,12 +191,20 @@
       <updated>1531419727130</updated>
       <workItem from="1531419728707" duration="5038000" />
       <workItem from="1531428247140" duration="888000" />
-      <workItem from="1531432899878" duration="6536000" />
+      <workItem from="1531432899878" duration="6726000" />
     </task>
+    <task id="LOCAL-00001" summary="changed directory.">
+      <created>1531478955271</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1531478955271</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12462000" />
+    <option name="totallyTimeSpent" value="12652000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="274" y="272" width="1400" height="835" extended-state="0" />
@@ -225,6 +233,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changed directory." />
+    <option name="LAST_COMMIT_MESSAGE" value="changed directory." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -288,14 +300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../spSQLNodeAPI/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../spSQLNodeAPI/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -327,6 +331,14 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spSQLNodeAPI/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
