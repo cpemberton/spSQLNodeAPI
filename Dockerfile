@@ -1,7 +1,7 @@
 FROM node:8
 
 # Create app directory
-WORKDIR /opt/node_sp_sql_api/app
+WORKDIR /opt/spSQLNodeAPI/app
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
