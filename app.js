@@ -8,6 +8,8 @@ a REST API to perform SQL queries on that database and returns the resultant rec
 var express = require('express');
 var app = express();
 var sql = require('mssql');
+var bodyParser = require('body-parser')
+var qs = require('querystring');
 
 module.exports = app;
 
@@ -68,15 +70,26 @@ exports.query = function(sqlQuery, callback) {
 
 };
 
-
-app.get('/sql/:command', function (req, res) {
-    request.input('command', req.params.command);
-    exports.query(command, function (err, recordsets) {
-        if (err) return callback(err);
-        res.send(JSON.stringify(recordsets));
+app.post('/sql', function (req, res) {
+        var body = '';
+        req.on('data', function (data) {
+            body += data;
+            /*
+            Too much POST data, kill the connection!
+            1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~ 1MB
+            */
+            if (body.length > 1e6)
+                req.connection.destroy();
+        });
+        req.on('end', function () {
+            var obj = JSON.parse(body);
+            console.log(obj.sql);
+            exports.query(obj.sql, function (err, recordsets) {
+                if(err) console.log(err);
+                res.send(JSON.stringify(recordsets));
+        });
     });
 })
-
 
 app.get('/tables', function (req, res) {
     exports.query("SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'", function (err, recordsets) {
@@ -87,14 +100,14 @@ app.get('/tables', function (req, res) {
 
 app.get('/quote', function (req, res) {
     exports.query('SELECT * FROM dbo.Quote', function (err, recordsets) {
-        if (err) return callback(err);
+        if(err) console.log(err);
         res.send(JSON.stringify(recordsets));
     });
 })
 
 app.get('/trade', function (req, res) {
     exports.query('SELECT * FROM dbo.Trade', function (err, recordsets) {
-        if (err) return callback(err);
+        if(err) console.log(err);
         res.send(JSON.stringify(recordsets));
     });
 })
