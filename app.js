@@ -20,6 +20,30 @@ app.get('*', function(req, res) {
 });
 */
 
+var sql = require('mssql'),
+    connPoolPromise = null;
+
+function getConnPoolPromise() {
+    if (connPoolPromise) return connPoolPromise;
+
+    connPoolPromise = new Promise(function (resolve, reject) {
+        var conn = new sql.ConnectionPool(mssqlConnect);
+
+        conn.on('close', function () {
+            connPoolPromise = null;
+        });
+
+        conn.connect().then(function (connPool) {
+            return resolve(connPool);
+        }).catch(function (err) {
+            connPoolPromise = null;
+            return reject(err);
+        });
+    });
+
+    return connPoolPromise;
+}
+
 // Start server and listen on http://localhost:8081/
 var server = app.listen(10555, function () {
     var host = server.address().address
@@ -27,51 +51,50 @@ var server = app.listen(10555, function () {
     console.log("app listening at http://%s:%s", host, port)
 });
 
+
+// Fetch data example
+exports.query = function(sqlQuery, callback) {
+
+    getConnPoolPromise().then(function (connPool) {
+
+        var sqlRequest = new sql.Request(connPool);
+        return sqlRequest.query(sqlQuery);
+
+    }).then(function (result) {
+        callback(null, result);
+    }).catch(function (err) {
+        callback(err);
+    });
+
+};
+
+
 app.get('/sql/:command', function (req, res) {
-    sql.connect(mssqlConnect, function(err) {
-        if (err) console.log(err);
-        var request = new sql.Request();
-        request.input('command', req.params.command);
-        request.query(command, function(err, recordset) {
-            if(err) console.log(err);
-            // Result in JSON format
-            res.send(JSON.stringify(recordset));
-        });
+    request.input('command', req.params.command);
+    exports.query(command, function (err, recordsets) {
+        if (err) return callback(err);
+        res.send(JSON.stringify(recordsets));
     });
 })
 
+
 app.get('/tables', function (req, res) {
-    sql.connect(mssqlConnect, function(err) {
-        if (err) console.log(err);
-        var request = new sql.Request();
-        request.query("SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'", function(err, recordset) {
-            if(err) console.log(err);
-            // Result in JSON format
-            res.end(JSON.stringify(recordset));
-        });
+    exports.query("SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'", function (err, recordsets) {
+        if(err) console.log(err);
+        res.send(JSON.stringify(recordsets));
     });
 })
 
 app.get('/quote', function (req, res) {
-    sql.connect(mssqlConnect, function(err) {
-        if (err) console.log(err);
-        var request = new sql.Request();
-        request.query('SELECT * FROM dbo.Quote', function(err, recordset) {
-            if(err) console.log(err);
-            // Result in JSON format
-            res.end(JSON.stringify(recordset));
-        });
+    exports.query('SELECT * FROM dbo.Quote', function (err, recordsets) {
+        if (err) return callback(err);
+        res.send(JSON.stringify(recordsets));
     });
 })
 
 app.get('/trade', function (req, res) {
-    sql.connect(mssqlConnect, function(err) {
-        if (err) console.log(err);
-        var request = new sql.Request();
-        request.query('SELECT * FROM dbo.Trade', function(err, recordset) {
-            if(err) console.log(err);
-            // Result in JSON format
-            res.end(JSON.stringify(recordset));
-        });
+    exports.query('SELECT * FROM dbo.Trade', function (err, recordsets) {
+        if (err) return callback(err);
+        res.send(JSON.stringify(recordsets));
     });
 })
