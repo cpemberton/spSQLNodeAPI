@@ -1,0 +1,6 @@
+version: '1.0.0'
+services:
+  node_sp_sql_api:
+    build: .
+    ports:
+     - "10555:10555"
