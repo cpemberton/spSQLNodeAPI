@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dbec4fe-c989-45a1-8ae8-5cb021896c0e" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../spSQLNodeAPI/docker-compose.yml" afterPath="$PROJECT_DIR$/../spSQLNodeAPI/docker-compose.old.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../spSQLNodeAPI/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../spSQLNodeAPI/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../spSQLNodeAPI/Dockerfile" afterPath="$PROJECT_DIR$/../spSQLNodeAPI/Dockerfile" />
     </list>
@@ -33,8 +32,8 @@
       <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../spSQLNodeAPI/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="255">
+              <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -109,8 +108,8 @@
     <handled-path value="$PROJECT_DIR$/../spSQLNodeAPI/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="387" />
-    <option name="y" value="194" />
+    <option name="x" value="372" />
+    <option name="y" value="166" />
     <option name="width" value="1400" />
     <option name="height" value="835" />
   </component>
@@ -192,7 +191,7 @@
       <updated>1531419727130</updated>
       <workItem from="1531419728707" duration="5038000" />
       <workItem from="1531428247140" duration="888000" />
-      <workItem from="1531432899878" duration="8263000" />
+      <workItem from="1531432899878" duration="8954000" />
     </task>
     <task id="LOCAL-00001" summary="changed directory.">
       <created>1531478955271</created>
@@ -208,14 +207,21 @@
       <option name="project" value="LOCAL" />
       <updated>1531479156887</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="removed version from docker-compose.yml">
+      <created>1531480861305</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1531480861305</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14189000" />
+    <option name="totallyTimeSpent" value="14880000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="387" y="194" width="1400" height="835" extended-state="0" />
+    <frame x="372" y="166" width="1400" height="835" extended-state="0" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32124728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -345,8 +351,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../spSQLNodeAPI/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        <state relative-caret-position="255">
+          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
           <folding />
         </state>
       </provider>
