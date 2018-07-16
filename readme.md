@@ -1,6 +1,5 @@
 # Node JS + SQL Server - Generic SQL REST API (Microservice)
-<a name="Node JS"><img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-white.png" heigth="300px" width="300px"/>+<a name="SQL Server"><img src="https://www.01net.it/wp-content/uploads/sites/14/2016/06/SQL_Server_2016.png" heigth="300px" width="300px"/></a></a>
-
+<a name="Node JS"><img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-white.png" height="300px" width="300px"/>+<a name="SQL Server"><img src="https://www.01net.it/wp-content/uploads/sites/14/2016/06/SQL_Server_2016.png" heigth="300px" width="300px"/></a></a>
 ## Version: 1.0.0
 #### Author: Christian Pemberton
 #### References:
