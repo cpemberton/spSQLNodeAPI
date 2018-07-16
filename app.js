@@ -45,7 +45,7 @@ var server = app.listen(port, function () {
     var port = server.address().port
     if(host !== null && host !== '') {host = 'localhost';}
     console.log("> Node JS app listening at: http://%s:%s", host, port)
-    console.log("> For generic SQL: curl -d  " + "'" + '{"url":"SELECT * ... "}' + "'" + ' -X POST http://%s:%s/sql', host, port)
+    console.log("> For generic SQL: curl -d  " + "'" + '{"sql":"SELECT * ... "}' + "'" + ' -X POST http://%s:%s/sql', host, port)
     console.log("> For tables: curl -X GET  http://%s:%s/tables", host, port)
     console.log("> For trades: curl -X GET  http://%s:%s/trades", host, port)
     console.log("> For quotes: curl -X GET  http://%s:%s/quotes", host, port)
