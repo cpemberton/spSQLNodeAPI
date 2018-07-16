@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dbec4fe-c989-45a1-8ae8-5cb021896c0e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -220,7 +218,7 @@
       <workItem from="1531428247140" duration="888000" />
       <workItem from="1531432899878" duration="25706000" />
       <workItem from="1531601944829" duration="2755000" />
-      <workItem from="1531735220865" duration="114000" />
+      <workItem from="1531735220865" duration="137000" />
     </task>
     <task id="LOCAL-00001" summary="changed directory.">
       <created>1531478955271</created>
@@ -271,11 +269,18 @@
       <option name="project" value="LOCAL" />
       <updated>1531735296976</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed callback functions.">
+      <created>1531735340529</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1531735340529</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34501000" />
+    <option name="totallyTimeSpent" value="34524000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="203" y="62" width="1599" height="1083" extended-state="0" />
