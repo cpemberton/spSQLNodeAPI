@@ -1,40 +1,34 @@
 /*
-This Node JS app connects to a Structured Products MS SQL server database hosted on an Amazon EC2 instance and serves
-a REST API to perform SQL queries on that database and returns the resultant recordset in JSON
-@file: core.js
-@modifiedBy: cmpemberton
+Through a REST API, this runs generic SQL against a SQL server database such as our structured products database.
+The resultant recordsets are returned in JSON
+@author: cmpemberton
 @ref: https://medium.com/voobans-tech-stories/how-to-quickly-create-a-simple-rest-api-for-sql-server-database-7ddb595f751a
-*/;
+*/
+
+// Load requirements
 var express = require('express');
 var app = express();
 var sql = require('mssql');
-var bodyParser = require('body-parser')
-var qs = require('querystring');
-
 module.exports = app;
 
-var mssqlConnect = 'mssql://Administrator:4fgp-iz%25vfa@52.56.239.197:1433/Cirdan?encrypt=true'
+// Connection string: mssql://<username>:<password>@<host:port>/<database>?encrypt=true
+const mssqlConnect = 'mssql://Administrator:4fgp-iz%25vfa@52.56.239.197:1433/Cirdan?encrypt=true';
 
-/*
-// Load the single view file (angular will handle the page changes on the front-end)
-app.get('*', function(req, res) {
-    res.sendfile('./public/index.html');
-});
-*/
+// Port number for REST API
+const port = 10555;
+const sqlTables = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'";
+const sqlTrades = 'SELECT * FROM dbo.Quote'
+const sqlQuotes = 'SELECT * FROM dbo.Trade'
 
-var sql = require('mssql'),
-    connPoolPromise = null;
-
+// Get pool connection promise
+connPoolPromise = null;
 function getConnPoolPromise() {
     if (connPoolPromise) return connPoolPromise;
-
     connPoolPromise = new Promise(function (resolve, reject) {
         var conn = new sql.ConnectionPool(mssqlConnect);
-
         conn.on('close', function () {
             connPoolPromise = null;
         });
-
         conn.connect().then(function (connPool) {
             return resolve(connPool);
         }).catch(function (err) {
@@ -42,72 +36,74 @@ function getConnPoolPromise() {
             return reject(err);
         });
     });
-
     return connPoolPromise;
 }
 
-// Start server and listen on http://localhost:8081/
-var server = app.listen(10555, function () {
+// Start server and listen on http://<host>:<port>/
+var server = app.listen(port, function () {
     var host = server.address().address
     var port = server.address().port
-    console.log("app listening at http://%s:%s", host, port)
+    if(host !== null && host !== '') {host = 'localhost';}
+    console.log("> Node JS app listening at: http://%s:%s", host, port)
+    console.log("> For generic SQL: curl -d  " + "'" + '{"url":"SELECT * ... "}' + "'" + ' -X POST http://%s:%s/sql', host, port)
+    console.log("> For tables: curl -X GET  http://%s:%s/tables", host, port)
+    console.log("> For trades: curl -X GET  http://%s:%s/trades", host, port)
+    console.log("> For quotes: curl -X GET  http://%s:%s/quotes", host, port)
 });
 
-
-// Fetch data example
+// Generic SQL function
 exports.query = function(sqlQuery, callback) {
-
     getConnPoolPromise().then(function (connPool) {
-
         var sqlRequest = new sql.Request(connPool);
         return sqlRequest.query(sqlQuery);
-
     }).then(function (result) {
         callback(null, result);
     }).catch(function (err) {
         callback(err);
     });
-
 };
 
+// POST request: generic SQL in the payload i.e. {"sql":"SELECT .... "}
 app.post('/sql', function (req, res) {
         var body = '';
         req.on('data', function (data) {
             body += data;
-            /*
-            Too much POST data, kill the connection!
-            1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~ 1MB
-            */
             if (body.length > 1e6)
+                // 1e6 = 1000000 ~ 1MB
                 req.connection.destroy();
         });
         req.on('end', function () {
             var obj = JSON.parse(body);
             console.log(obj.sql);
             exports.query(obj.sql, function (err, recordsets) {
-                if(err) console.log(err);
+                var d = new Date();
+                var n = d.getTime();
+                if(err) console.log('> Error: ' + err.name + ', ' + err.message,  +', line number:' + err.lineNumber);
                 res.send(JSON.stringify(recordsets));
-        });
+        })
     });
 })
 
+// GET request: get all tables
 app.get('/tables', function (req, res) {
-    exports.query("SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'", function (err, recordsets) {
-        if(err) console.log(err);
+    exports.query(sqlTables, function (err, recordsets) {
+        if(err) console.log('> Error: ' + err.name + ', ' + err.message,  +', line number:' + err.lineNumber);
         res.send(JSON.stringify(recordsets));
     });
 })
 
-app.get('/quote', function (req, res) {
-    exports.query('SELECT * FROM dbo.Quote', function (err, recordsets) {
-        if(err) console.log(err);
+// GET request: get all records from dbo.Quote table
+app.get('/quotes', function (req, res) {
+    exports.query(sqlQuotes, function (err, recordsets) {
+        if(err) console.log('> Error: ' + err.name + ', ' + err.message,  +', line number:' + err.lineNumber);
         res.send(JSON.stringify(recordsets));
     });
 })
 
-app.get('/trade', function (req, res) {
-    exports.query('SELECT * FROM dbo.Trade', function (err, recordsets) {
-        if(err) console.log(err);
+// GET request: get all records from dbo.Trade table
+app.get('/trades', function (req, res) {
+    exports.query(sqlTrades, function (err, recordsets) {
+        if(err) console.log('> Error: ' + err.name + ', ' + err.message,  +', line number:' + err.lineNumber);
         res.send(JSON.stringify(recordsets));
     });
 })

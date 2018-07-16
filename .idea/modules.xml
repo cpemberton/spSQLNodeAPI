@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/mySQL.iml" filepath="$PROJECT_DIR$/.idea/mySQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spSQLNodeAPI.iml" filepath="$PROJECT_DIR$/.idea/spSQLNodeAPI.iml" />
     </modules>
   </component>
 </project>
