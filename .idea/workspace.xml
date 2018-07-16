@@ -213,7 +213,7 @@
       <workItem from="1531428247140" duration="888000" />
       <workItem from="1531432899878" duration="25706000" />
       <workItem from="1531601944829" duration="2755000" />
-      <workItem from="1531735220865" duration="184000" />
+      <workItem from="1531735220865" duration="275000" />
     </task>
     <task id="LOCAL-00001" summary="changed directory.">
       <created>1531478955271</created>
@@ -285,11 +285,18 @@
       <option name="project" value="LOCAL" />
       <updated>1531735393575</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed callback functions. Fixed Readme.md">
+      <created>1531735419473</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1531735419473</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34571000" />
+    <option name="totallyTimeSpent" value="34662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="203" y="62" width="1599" height="1083" extended-state="0" />
@@ -325,7 +332,8 @@
     <MESSAGE value="changed connection methods and corresponding API requests." />
     <MESSAGE value="changed generic SQL function from GET to POST HTTP method." />
     <MESSAGE value="Fixed callback functions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed callback functions." />
+    <MESSAGE value="Fixed callback functions. Fixed Readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed callback functions. Fixed Readme.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
