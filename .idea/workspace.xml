@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dbec4fe-c989-45a1-8ae8-5cb021896c0e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docker-compose.old.yml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/spSQLNodeAPI.iml" afterPath="$PROJECT_DIR$/.idea/spSQLNodeAPI.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dockerfile" afterPath="$PROJECT_DIR$/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -224,7 +220,7 @@
       <workItem from="1531428247140" duration="888000" />
       <workItem from="1531432899878" duration="25706000" />
       <workItem from="1531601944829" duration="2755000" />
-      <workItem from="1531735220865" duration="51000" />
+      <workItem from="1531735220865" duration="114000" />
     </task>
     <task id="LOCAL-00001" summary="changed directory.">
       <created>1531478955271</created>
@@ -268,11 +264,18 @@
       <option name="project" value="LOCAL" />
       <updated>1531499871077</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed callback functions.">
+      <created>1531735296975</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1531735296976</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34438000" />
+    <option name="totallyTimeSpent" value="34501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="203" y="62" width="1599" height="1083" extended-state="0" />
@@ -307,7 +310,8 @@
     <MESSAGE value="removed version from docker-compose.yml" />
     <MESSAGE value="changed connection methods and corresponding API requests." />
     <MESSAGE value="changed generic SQL function from GET to POST HTTP method." />
-    <option name="LAST_COMMIT_MESSAGE" value="changed generic SQL function from GET to POST HTTP method." />
+    <MESSAGE value="Fixed callback functions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed callback functions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
