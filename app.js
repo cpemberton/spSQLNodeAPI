@@ -12,7 +12,7 @@ var sql = require('mssql');
 module.exports = app;
 
 // Connection string: mssql://<username>:<password>@<host:port>/<database>?encrypt=true
-const mssqlConnect = 'mssql://Administrator:4fgp-iz%25vfa@52.56.239.197:1433/Cirdan?encrypt=true';
+const mssqlConnect = 'mssql://<username>:<password>@<host:port>/<database>?encrypt=true';
 
 // Port number for REST API
 const port = 10555;
