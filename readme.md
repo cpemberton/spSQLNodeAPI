@@ -26,7 +26,7 @@ docker build -t sp_sql_node_api .
 ```
 3. Run docker i.e. in the app directory
 ```sh
-docker run -p 10555:10555 sp_sql_node_api
+docker run -p 10555:10555 -d --name sp_sql_node_api sp_sql_node_api
 ```
 
 ## Generic Examples
